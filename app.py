@@ -15,17 +15,29 @@ def get_element_by_tag(url, html_tag):
 
 
 def text_to_html(text):
-    return text.replace(" ", "%20").lower()
+    return text.replace(" ", "%20").replace(",", "%2C").lower()
 
 
 def main():
-    keywords = ["programming", "software development", "coding", "python", "java", "php", "web", "ai", "machine learning"]
+    search_terms = ["programming", "software development", "coding", "python", "java", "php", "web", "ai", "machine learning"]
     country = "uk"
-    location = "Doncaster"
-    for keyword in keywords:
-        url = f"https://{country}.indeed.com/jobs?q={text_to_html(keyword)}&l={location}&vjk=38d83016285aee43"
+    location = "Doncaster, South Yorkshire"
+    for search_term in search_terms:
+        url = f"https://{country}.indeed.com/jobs?q={text_to_html(search_term)}&l={text_to_html(location)}&vjk=38d83016285aee43"
         print(get_element_by_tag(url, "title"))
 
 
 if __name__ == "__main__":
     main()
+
+
+
+# for the wrapper!!!!!!! (make it send emails instead)
+# params = {
+#     'publisher': "",    # publisher ID (Required)
+#     'q': "",            # Job search query
+#     'l': "",            # location (city / state)
+#     'co': "",           # Two letter Country Code
+#     'sort': "",         # Sort order, date or relevance
+#     'days': ""          # number of days to fetch jobs, maximum is 7 days
+# }
