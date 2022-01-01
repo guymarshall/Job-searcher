@@ -34,9 +34,6 @@ def main():
     print(get_element_by_tag(url, "title"))
 <<<<<<< HEAD
     print(get_element_by_tag("https://www.youtube.com/watch?v=p4x8mMM5g4g", "title"))
-=======
-    print(get_element_by_tag("", "title"))
->>>>>>> 0f6d44da485f363239c150e3c97dcee080ade8b6
 
 if __name__ == "__main__":
     main()
