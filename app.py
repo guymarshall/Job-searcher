@@ -32,7 +32,6 @@ def main():
     # title = html[start_index:end_index]
 
     print(get_element_by_tag(url, "title"))
-<<<<<<< HEAD
     print(get_element_by_tag("https://www.youtube.com/watch?v=p4x8mMM5g4g", "title"))
 
 if __name__ == "__main__":
