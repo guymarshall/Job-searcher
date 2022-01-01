@@ -32,6 +32,7 @@ def main():
     # title = html[start_index:end_index]
 
     print(get_element_by_tag(url, "title"))
+    print(get_element_by_tag("", "title"))
 
 if __name__ == "__main__":
     main()
