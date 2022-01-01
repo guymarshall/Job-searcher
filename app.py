@@ -1,4 +1,5 @@
 from urllib.request import urlopen
+import urllib
 
 def get_element_by_tag(url, html_tag):
     page = urlopen(url)
@@ -12,13 +13,16 @@ def get_element_by_tag(url, html_tag):
     element = html[start_index:end_index]
     return element
 
+def text_to_html(text):
+    return text.replace(" ", "%20").lower()
 
 def main():
     keywords = ["programming", "software development", "coding", "python", "java", "php", "web", "ai", "machine learning"]
     country = "uk"
-    url = f"https://{country}.indeed.com/jobs?q=python%20developer&l=Doncaster%2C%20South%20Yorkshire&vjk=38d83016285aee43"
-
-    print(get_element_by_tag(url, "title"))
+    location = "Doncaster"
+    for keyword in keywords:
+        url = f"https://{country}.indeed.com/jobs?q={text_to_html(keyword)}&l={location}&vjk=38d83016285aee43"
+        print(get_element_by_tag(url, "title"))
 
 if __name__ == "__main__":
     main()
