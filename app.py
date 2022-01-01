@@ -1,5 +1,3 @@
-# web scrape for jobs on totaljobs and indeed
-# email results daily
 from urllib.request import urlopen
 
 def get_element_by_tag(url, html_tag):
@@ -16,25 +14,11 @@ def get_element_by_tag(url, html_tag):
 
 
 def main():
-
-    url = "http://olympus.realpython.org/profiles/aphrodite"
-
-    # page = urlopen(url)
-
-    # print(page)
-
-    # html_bytes = page.read()
-    # html = html_bytes.decode("utf-8")
-
-    # title_index = html.find("<title>")
-    # start_index = title_index + len("<title>")
-    # end_index = html.find("</title>")
-    # title = html[start_index:end_index]
+    keywords = ["programming", "software development", "coding", "python", "java", "php", "web", "ai", "machine learning"]
+    country = "uk"
+    url = f"https://{country}.indeed.com/jobs?q=python%20developer&l=Doncaster%2C%20South%20Yorkshire&vjk=38d83016285aee43"
 
     print(get_element_by_tag(url, "title"))
-    print(get_element_by_tag("https://www.youtube.com/watch?v=p4x8mMM5g4g", "title"))
 
 if __name__ == "__main__":
     main()
-
-# keywords = ["programming", "software development", "coding", "python", "java", "php", "web", "ai", "machine learning"]
